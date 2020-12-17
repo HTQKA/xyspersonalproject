@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=CTT" />
+                <property name="username" value="root" />
+                <property name="password" value="2811107845" />
+            </dataSource>
+        </environment>
+    </environments>
+<!--    &lt;!&ndash; settings &ndash;&gt;-->
+<!--    <settings>-->
+<!--        &lt;!&ndash; 打开延迟加载的开关 &ndash;&gt;-->
+<!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+<!--        &lt;!&ndash; 将积极加载改为消极加载（即按需加载） &ndash;&gt;-->
+<!--        <setting name="aggressiveLazyLoading" value="false"/>-->
+<!--        &lt;!&ndash; 打开全局缓存开关（二级缓存）默认值就是 true &ndash;&gt;-->
+<!--        <setting name="cacheEnabled" value="true"/>-->
+<!--    </settings>-->
+
+<!--    &lt;!&ndash; 别名定义 &ndash;&gt;-->
+<!--    <typeAliases>-->
+<!--        <package name="com.example"/>-->
+<!--    </typeAliases>-->
+
+    <!-- 加载映射文件 -->
+    <mappers>
+        <!-- 通过 resource 方法一次加载一个映射文件 -->
+        <mapper resource="config/UserMapper.xml"/>
+        <!-- 批量加载mapper -->
+<!--        <package name="com.example.mapper"/>-->
+    </mappers>
+</configuration>
